@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication1.StatusChamado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchaNome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SchaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.SchaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.SchaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

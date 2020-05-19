@@ -1,0 +1,22 @@
+﻿@model WebApplication1.StatusChamado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>StatusChamado</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Status
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SchaNome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SchaId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Pessoa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PesNome)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PesEmail)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PesId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

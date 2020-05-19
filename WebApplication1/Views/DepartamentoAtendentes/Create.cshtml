@@ -1,0 +1,34 @@
+﻿@model WebApplication1.DepartamentoAtendente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Departamento - Atendente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DaDepartamentoid" class="control-label">Departamento</label>
+                <select asp-for="DaDepartamentoid" class ="form-control" asp-items="ViewBag.DaDepartamentoid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaAtendenteid" class="control-label">Atendente</label>
+                <select asp-for="DaAtendenteid" class ="form-control" asp-items="ViewBag.DaAtendenteid"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

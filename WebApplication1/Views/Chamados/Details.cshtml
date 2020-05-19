@@ -1,0 +1,82 @@
+﻿@model WebApplication1.Chamado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Chamado</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Titulo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaTitulo)
+        </dd>
+        <dt class = "col-sm-2">
+            Assunto
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaAssunto)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaDescricao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaData)
+        </dd>
+        <dt class = "col-sm-2">
+            Criador
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaCriador)
+        </dd>
+        <dt class = "col-sm-2">
+            Atendente
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaAtendente.AteId)
+        </dd>
+        <dt class = "col-sm-2">
+            Categoria
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaCategoria.CatNome)
+        </dd>
+        <dt class = "col-sm-2">
+            Cliente
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaCliente.CliId)
+        </dd>
+        <dt class = "col-sm-2">
+            Departamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaDepartamento.DepEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            Prioridade
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaPrioridade.PriNome)
+        </dd>
+        <dt class = "col-sm-2">
+            Status
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChaStatus.SchaNome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ChaId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication1.Chamado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Titulo
+            </th>
+            <th>
+                Assunto
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Data
+            </th>
+            <th>
+                Criador
+            </th>
+            <th>
+                Atendente
+            </th>
+            <th>
+                Categoria
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Prioridade
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaAssunto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaCriador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaAtendente.AteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaCategoria.CatNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaCliente.CliId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaDepartamento.DepEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaPrioridade.PriNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChaStatus.SchaNome)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ChaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ChaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ChaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

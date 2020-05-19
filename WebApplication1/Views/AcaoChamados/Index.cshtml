@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.AcaoChamado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Atendente
+            </th>
+            <th>
+                Categoria
+            </th>
+            <th>
+                Chamado
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcaoDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcaoAtendente.AteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcaoCategoria.CatNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcaoChamadoNavigation.ChaCriador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcaoDepartamento.DepEmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AcaoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.AcaoId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.AcaoId">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

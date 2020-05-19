@@ -1,0 +1,53 @@
+﻿@model WebApplication1.AcaoChamado
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Ação Chamado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="AcaoChamadoid" class="control-label">Chamado Id</label>
+                <select asp-for="AcaoChamadoid" class ="form-control" asp-items="ViewBag.AcaoChamadoid"></select>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="AcaoDescricao" class="control-label">Descrição</label>
+                <input asp-for="AcaoDescricao" class="form-control" />
+                <span asp-validation-for="AcaoDescricao" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="AcaoAtendenteid" class="control-label">Atendente Id</label>
+                <select asp-for="AcaoAtendenteid" class ="form-control" asp-items="ViewBag.AcaoAtendenteid"></select>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="AcaoDepartamentoid" class="control-label">Departamento Id</label>
+                <select asp-for="AcaoDepartamentoid" class ="form-control" asp-items="ViewBag.AcaoDepartamentoid"></select>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="AcaoCategoriaid" class="control-label">Categoria Id</label>
+                <select asp-for="AcaoCategoriaid" class ="form-control" asp-items="ViewBag.AcaoCategoriaid"></select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

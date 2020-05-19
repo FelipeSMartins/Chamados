@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Organizacao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Organizacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrgNome" class="control-label">Nome</label>
+                <input asp-for="OrgNome" class="form-control" />
+                <span asp-validation-for="OrgNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgCnpj" class="control-label">Cnpj</label>
+                <input asp-for="OrgCnpj" class="form-control" />
+                <span asp-validation-for="OrgCnpj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgEmail" class="control-label">Email</label>
+                <input asp-for="OrgEmail" type="email" class="form-control" />
+                <span asp-validation-for="OrgEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgTelefone" class="control-label">Telefone</label>
+                <input asp-for="OrgTelefone" type="phone" class="form-control" />
+                <span asp-validation-for="OrgTelefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgEndereco" class="control-label">Endereço</label>
+                <input asp-for="OrgEndereco" class="form-control" />
+                <span asp-validation-for="OrgEndereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgSituacao" class="control-label">Situação</label>
+                <input asp-for="OrgSituacao" class="form-control" />
+                <span asp-validation-for="OrgSituacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrgObs" class="control-label">Observação</label>
+                <input asp-for="OrgObs" class="form-control" />
+                <span asp-validation-for="OrgObs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" onclick="return validate()" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+
+    <script language="javascript" type="text/javascript">
+        function validate() {
+
+            if (document.getElementById("<%=OrgNome%>").value == "") {
+                alert("Informe o nome.");
+                document.getElementById("<%=OrgNome%>").focus();
+                return false;
+
+            }
+    </script>
+}
+          
+
+

@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Organizacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Organizacao</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgNome)
+        </dd>
+        <dt class="col-sm-2">
+            Cnpj
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgCnpj)
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgEmail)
+        </dd>
+        <dt class="col-sm-2">
+            Telefone
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgTelefone)
+        </dd>
+        <dt class="col-sm-2">
+            Endereço
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgEndereco)
+        </dd>
+        <dt class="col-sm-2">
+            Situação
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgSituacao)
+        </dd>
+        <dt class="col-sm-2">
+            Observação
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrgObs)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrgId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

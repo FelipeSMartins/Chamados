@@ -1,0 +1,32 @@
+﻿@model WebApplication1.DepartamentoCategoria
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Tem certeza de que deseja excluir isso?</h3>
+<div>
+    <h4>Departamento - Categoria</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Categoria
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DcCategoria.CatNome)
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DcDepartamento.DepEmail)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DcDepartamentoid" />
+        <input type="hidden" asp-for="DcCategoriaid" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>
